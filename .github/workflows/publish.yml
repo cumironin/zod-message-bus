@@ -1,5 +1,4 @@
-name: publish
-
+name: Publish
 on:
   push:
     branches:
@@ -22,7 +21,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - name: Create release pull request or publish
-        id: Changesets
+        id: changesets
         uses: changesets/action@v1
         with:
           publish: pnpm run release
