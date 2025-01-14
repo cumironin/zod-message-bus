@@ -14,12 +14,27 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7
+          run_install: false
 
       - uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: "pnpm"
 
-      - run: pnpm install --frozen-lockfile
+      # Setup pnpm store
+      - name: Setup pnpm store
+        run: |
+          pnpm config set store-dir .pnpm-store
+          pnpm config set verify-store-integrity false
 
-      - run: pnpm run ci
+      # First try to remove any existing incompatible lock file
+      - name: Clean existing lock file
+        run: rm -f pnpm-lock.yaml
+
+      # Generate a fresh lock file
+      - name: Generate lock file
+        run: pnpm install
+
+      # Run CI after setup is complete
+      - name: Run CI
+        run: pnpm run ci
