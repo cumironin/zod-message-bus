@@ -4,7 +4,8 @@ on:
     branches:
       - "main"
 
-permissions:  # Add permissions
+# Add permissions block
+permissions:
   contents: write
   pull-requests: write
   packages: write
@@ -24,7 +25,7 @@ jobs:
         with:
           node-version: 20.x
           cache: "pnpm"
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - run: pnpm install --frozen-lockfile
       - name: Create release pull request or publish
