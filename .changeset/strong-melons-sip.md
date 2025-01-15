@@ -1,5 +1,5 @@
 ---
-"zod-message-bus": patch
+"fetch-zod": patch
 ---
 
 Initial commit
