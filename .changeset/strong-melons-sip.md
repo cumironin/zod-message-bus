@@ -1,5 +1,5 @@
 ---
-"@haha-ts/zod-message-bus": patch
+"zod-message-bus": patch
 ---
 
 Initial commit
