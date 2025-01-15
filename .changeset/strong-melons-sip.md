@@ -1,5 +1,5 @@
 ---
-"@onepointpro/fetch-zod": patch
+"@onepointpro/fetch-zod-kodok": patch
 ---
 
 Initial commit
