@@ -1,5 +1,5 @@
 ---
-"fetch-zod": patch
+"@onepointpro/fetch-zod": patch
 ---
 
 Initial commit
